@@ -2737,7 +2737,7 @@ gst_omx_video_dec_handle_frame (GstVideoDecoder * decoder,
     } else {
       buf->omx_buf->nTickCount = 0;
     }
-
+//GST_VIDEO_CODEC_FRAME_IS_SYNC_POINT  I帧判定函数，如果是第一个frame则是IDR帧
     if (first_ouput_buffer && GST_VIDEO_CODEC_FRAME_IS_SYNC_POINT (frame))
       buf->omx_buf->nFlags |= OMX_BUFFERFLAG_SYNCFRAME;
 
