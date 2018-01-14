@@ -2539,7 +2539,7 @@ gst_omx_video_dec_handle_frame (GstVideoDecoder * decoder,
 
   timestamp = frame->pts;
   duration = frame->duration;
-
+//sushuai注册prepare_frame，在frame解码之前对frame进行处理例如，添加多少个字节的结束符。需要在H264/265的dec中注册函数。
   if (klass->prepare_frame) {
     GstFlowReturn ret;
 
